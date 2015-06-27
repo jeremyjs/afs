@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+git clone https://github.com/jjman505/afs
+cd afs && npm install
+npm install -g express-generator
+npm install -g nodemon
