@@ -13,6 +13,7 @@
     "jade": "~1.9.1",
     "lodash": "^3.9.3",
     "mongoose": "^4.0.6",
+    "mongoose-softdelete": "^0.6.2",
     "morgan": "~1.5.1",
     "serve-favicon": "~2.2.0"
   }
