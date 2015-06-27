@@ -19,3 +19,6 @@ nodemon bin/www
 ```
 
 Navigate to `localhost:3000` in your brower and you're good to go.
+
+# Resources
+This is a good tutorial from [scotch.io](http://scotch.io) for learning how Express APIs work: [Build a Restful API Using Node and Express](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
