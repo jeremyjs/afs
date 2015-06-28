@@ -14,8 +14,11 @@ git clone https://github.com/jjman505/afs.git
 cd afs
 npm install
 npm install -g express-generator gulp nodemon
-gulp &; nodemon bin/www
+gulp &
+nodemon bin/www
 ```
+
+You may need to append `sudo` to the beginning of the npm -g command depending on how npm is installed on your system. e.g. `sudo npm install -g express-generator gulp nodemon`
 
 Navigate to `localhost:3000` in your browser and you're good to go.
 
