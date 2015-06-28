@@ -4,21 +4,26 @@ A Fresh Start is a platform to empower communities in supporting their local hom
 # Setup
 1. Install [Node.js](https://nodejs.org/)
 2. Clone this repository on your local machine.
-3. Install NPM packages.
-4. Install express-generator.
-5. Install nodemon.
+3. Install local NPM packages.
+4. Install global NPM packages: express-generator, gulp, & nodemon.
+5. Run gulp to build public files
 6. Run the server.
 
 ```
 git clone https://github.com/jjman505/afs.git
 cd afs
 npm install
-npm install -g express-generator
-npm install -g nodemon
-nodemon bin/www
+npm install -g express-generator gulp nodemon
+gulp &; nodemon bin/www
 ```
 
-Navigate to `localhost:3000` in your brower and you're good to go.
+Navigate to `localhost:3000` in your browser and you're good to go.
 
 # Resources
-This is a good tutorial from [scotch.io](http://scotch.io) for learning how Express APIs work: [Build a Restful API Using Node and Express](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
+The core functionality of the server is achieved using Express. That includes routing, compiling and serving templates, and serving static files. This is a good tutorial from [scotch.io](http://scotch.io) for learning how an Express API works: [Build a Restful API Using Node and Express](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
+
+Within the backend api, the Mongoose package is our interface with the database. Our database is hosted on [modulus.io](http://modulus.io). You can learn more about MongoDB [here](https://docs.mongodb.org/getting-started/node/introduction/), and about Mongoose [here](http://mongoosejs.com/docs/index.html).
+
+We're using the Jade templating language in this project. Here's a link to the Jade home page so you can familiarize yourself: http://jade-lang.com/
+
+We'll be using LESS, which is a superset of CSS. If you get confused, look at the [LESS documentation](http://lesscss.org/features/). Remember, basic CSS is also valid LESS. Make sure you put all LESS code in the `stylesheets` folder in a `.less` file. The `public/css` folder is only for compiled css; don't modify those files by hand, run gulp to compile from LESS. You can use the `gulp build-css` command to recompile at any time, or just use `gulp &` to run the task in the background and automatically recompile on file changes.
