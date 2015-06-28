@@ -1,3 +1,5 @@
+# Generated files
+public/css
 
 # Private auth info
 secrets.js
