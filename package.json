@@ -11,6 +11,8 @@
     "debug": "~2.1.1",
     "express": "~4.11.1",
     "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-sourcemaps": "^1.5.2",
     "jade": "~1.9.1",
     "lodash": "^3.9.3",
     "mongoose": "^4.0.6",
