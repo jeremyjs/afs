@@ -1,0 +1,21 @@
+{
+  "name": "afs",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jjman505/afs",
+  "authors": [
+    "Conlin Durbin <conlindurbin@gmail.com>"
+  ],
+  "description": "Main application for A Fresh Start",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.0"
+  }
+}
