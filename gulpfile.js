@@ -1,14 +1,14 @@
-var path = require('path');  
-var gulp = require('gulp');  
-var gutil = require('gulp-util');  
-var concat = require('gulp-concat');  
-var uglify = require('gulp-uglify');  
-var less = require('gulp-less');  
-var babel = require('gulp-babel');  
+var path = require('path');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var less = require('gulp-less');
+var babel = require('gulp-babel');
 var watch = require('gulp-watch');
 
 gulp.task('js:build', function() {
-  return gulp.src(['dev/**/*.js', 'controllers/**/*.js', 'models/**/*.js'])
+  return gulp.src(['dev/**/*.js', 'models/**/*.js', 'controllers/**/*.js'])
   .pipe(babel())
   .pipe(concat('app.js'))
   .pipe(uglify())
@@ -16,7 +16,7 @@ gulp.task('js:build', function() {
   .on('error', gutil.log);
 });
 
-gulp.task('less:build', function () {  
+gulp.task('less:build', function () {
   return gulp.src('dev/less/**/*.less')
   .pipe(less({
     paths: [ path.join(__dirname, 'dev', 'less', 'includes') ]
@@ -26,3 +26,5 @@ gulp.task('less:build', function () {
 });
 
 gulp.task('default', ['less:build', 'js:build']);
+
+gulp.watch(['dev/**/*.js', 'models/**/*.js', 'controllers/**/*.js', 'dev/less/**/*.less'], ['js:build', 'less:build']);
