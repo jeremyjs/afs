@@ -1,8 +1,0 @@
-A Fresh Start Keys
-Application ID: 5XC6UlYqrAEBmzKjdur2skP5sMGQPfxeJocG1bMs
-Client Key: S1EGecdvoIziNVc9HGaz4C4W0QVgplAhEoY2YXa6
-JavaScript Key: S1ljUiiLVU0RyrltVX2ukBd0EA6JZOvHTb3QyVK3
-.NET Key: eTzIF4I7T4LNPLBTmTs00qS7hx2AZLVhqCe0vyCb
-Webhook Key: Bdp7ubATMdMiWDdU06D0CdxjDvlZh9ytK4Bimxcy
-REST API Key: qa5mBxxKmw6RFVfgXXAO7jXxn3jRZatuyrD0PESg
-Master Key: qa5mBxxKmw6RFVfgXXAO7jXxn3jRZatuyrD0PESg
