@@ -14,5 +14,4 @@ router.use('/shelters', require('./api/shelters'));
 router.use('/campaigns', require('./api/campaigns'));
 router.use('/communities', require('./api/communities'));
 
-
 module.exports = router;
