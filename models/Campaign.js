@@ -48,7 +48,7 @@ const Campaign = class Campaign {
   }
   get Description() {
     // String
-    this._Campaign.get("Description");
+    return this._Campaign.get("Description");
   }
   get Verified() {
     // Boolean
@@ -57,6 +57,6 @@ const Campaign = class Campaign {
   // Each object needs a way to be saved. Some
   save() {
     // Returning this let's us use it as a promise
-    return this._Campaign.save()
+    return this._Campaign.save();
   }
-}
+};
