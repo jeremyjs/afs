@@ -1,10 +1,12 @@
-let test = new Campaign();
-test.Description = "hello this is a test";
-
-test.save().then(function(data) {
-  test.Verified = true;
-  test.save().then(function(data) {
-    console.log(data);
-  });
-});
-
+angular
+.module('afs')
+.service("CampaignService", [function CampaignService() {
+  var _Campaign = Parse.Object.extend("Campaign");
+  function getCampaigns() {
+    const query = new Parse.Query(_Campaign);
+    return query.find();
+  }
+  return {
+    getCampaigns: getCampaigns
+  };
+}]);
