@@ -1,1 +1,29 @@
 <!--A Fresh Start Registration -->
+<html>
+<title>A Fresh Start Registration</title>
+	<head>
+	   	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app="regApp" ng-controller="regController">
+			<table class ="afsRegister" border="0" cellpadding="2" cellspacing="5" bgcolor="eeeee">
+				<th colspan="2" align="center">A Fresh Start Registration</th>
+				<tr><td>Username</td><td><input type="text" ng-model="username" required/></td></tr>
+				<tr><td>Password</td><td><input type="password" ng-model="password" /><td></tr>
+				<tr><td>Name</td><td><input type="text" ng-model="name" /></td></tr>
+				<tr><td>Address</td><td><input type="text" ng-model="address" /></td></tr>
+				<tr><td>City</td><td><input type="text" ng-model="city" /></td></tr>
+				<tr><td>State</td><td><input type="text" ng-model="state" /></td></tr>
+				<tr><td>Zip Code</td><td><input type="text" ng-model="zipCode" /></td></tr>
+				<tr><td>Phone Number</td><td><input type="text" ng-model="phoneNumber"/></td></tr>
+				<tr><td>Email </td><td><input type="email" ng-model="userEmail" /></td></tr>
+				<tr><th colspan="2" align="center">Type</th></tr>
+				<tr><td>Shelter </td><td><input type="radio" name="org" ng-value="1" /></td></tr>
+				<tr><td>Organization </td><td><input type="radio" name="org" ng-value="2" /></td></tr>
+				<tr><td>Person </td><td><input type="radio" name="org" ng-value="3" /></td></tr>
+				<tr><td colspan="2" align="center">
+					<button type="submit" ng-model="submitRegister">Register!</button></td></tr>
+			</table>
+		</div>
+	</body>
+</html>
