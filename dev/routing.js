@@ -1,6 +1,6 @@
 angular
 .module('afs')
-.config(function StateConfig($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', function StateConfig($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /campaigns
   $urlRouterProvider.otherwise("/campaigns");
@@ -13,4 +13,4 @@ angular
       controller: "CampaignCtrl",
       controllerAs: 'vm'
     });
-});
+}]);
