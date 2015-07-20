@@ -1,22 +1,15 @@
 
-let test = new Shelter();
-test.title = 'my test shelter';
-test.description = 'this is a shelter';
-test.save();
+angular
+.module('afs')
+.service('ShelterService', [function ShelterService () {
+  const _Shelter = Parse.Object.extend('Shelter');
+  const query = new Parse.Query(_Shelter);
 
-// angular.module('afs').service('shelterService', [function () {
-//   this.findShelters = (query) => {
-//     var Shelter = Parse.Object.extend('Shelter');
-//     var query = new Parse.Query(Shelter);
-//     return new Promise( (resolve, reject) => {
-//       query.find({ success: resolve, error: reject });
-//     });
-//   }
-//   this.getShelter = (id) => {
-//     var Shelter = Parse.Object.extend('Shelter');
-//     var query = new Parse.Query(Shelter);
-//     return new Promise( (resolve, reject) => {
-//       query.get(id, { success: resolve, error: reject });
-//     });
-//   }
-// }])
+  function findShelters () { return query.find(); }
+  function getShelter (id) { return query.get(); }
+
+  return {
+    findShelters: findShelters,
+    getShelter: getShelter
+  };
+}])
