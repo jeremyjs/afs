@@ -1,5 +1,6 @@
 # Generated files
-public/css
+static/css
+static/js/app.js
 
 # Private auth info
 secrets.js
