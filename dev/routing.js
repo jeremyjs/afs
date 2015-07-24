@@ -1,7 +1,6 @@
 angular
 .module('afs')
 .config(['$stateProvider', '$urlRouterProvider', function StateConfig($stateProvider, $urlRouterProvider) {
-  //
   // For any unmatched url, redirect to /campaigns
   $urlRouterProvider.otherwise('/campaigns');
   //
@@ -14,7 +13,6 @@ angular
       controller: 'CampaignCtrl',
       controllerAs: 'vm'
     })
-
     // Shelters
     .state('shelters', {
       url: '/shelters',
