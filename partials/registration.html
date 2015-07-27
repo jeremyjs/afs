@@ -24,27 +24,23 @@
 							<span ng-show="regForm.name.$error.pattern">Names can only contain letters</span>
 						</span>
 				</td></tr>
-				<tr><td>Address</td><td><input type="text" ng-model="address" name="address" ng-pattern="/\d{3,8}([a-zA-Z ]){6,32}$/" required/>
+				<!--<tr><td>Address</td><td><input type="text" ng-model="address" name="address" ng-pattern="/\d{3,8}([a-zA-Z ]){6,32}$/" required/>
 					<span style="color:red" ng-show="regForm.address.$dirty && regForm.address.$invalid">
-						<!--Regex Expression to match an address here - this is a little harder -->
 						<span ng-show="regForm.address.$error.pattern">Invalid Address</span>
 						</span>
 				</td></tr>
 				<tr><td>City</td><td><input type="text" ng-model="city" name="city" ng-pattern="/^([a-zA-Z]){4,15}$/" maxlength="15" required/>
 					<span style="color:red" ng-show="regForm.city.$dirty && regForm.city.$invalid">
-						<!--Regex Expression to match the city here -->
 						<span ng-show="regForm.city.$error.pattern">Cities can only contain letters</span>
 					</span>
 				</td></tr>
 				<tr><td>State</td><td><input type="text" ng-model="state" name="state" maxlength="15" ng-maxlength="15"ng-pattern="/^([a-zA-Z]){4,15}$/" required/>
 					<span style="color:red" ng-show="regForm.state.$dirty && regForm.state.$invalid">
-						<!-- Regex expression to match the state here -->
 						<span ng-show="regForm.state.$error.pattern">States can only contain letters</span>
 					</span>
 				</td></tr>
 				<tr><td>Zip Code</td><td><input type="text" ng-model="zipCode" name="zipCode" ng-maxlength="6" ng-pattern="/\d{5,10}/"required/>
 					<span style="color:red" ng-show="regForm.zipCode.$dirty && regForm.zipCode.$invalid" >
-						<!-- Regex Expression to match zip code -->
 						<span ng-show="regForm.zipCode.$error.pattern">Invalid Zip Code</span>
 					</span>
 				</td></tr>
@@ -52,7 +48,7 @@
 					<span style="color:red" ng-show="regForm.phoneNumber.$dirty && regForm.phoneNumber.$invalid">
 						<span ng-show="regForm.phoneNumber.$error.pattern">Invalid phone number</span>
 					</span>
-				</td></tr>
+				</td></tr>-->
 				<tr><td>Email </td><td><input type="email" ng-model="email" name="email" ng-pattern="/([a-zA-Z0-9])[@][a-zA-Z]{4,20}[.]\w{3}$/" required/>
 					<span style="color:red" ng-show="regForm.email.$dirty && regForm.email.$invalid">
 						<!-- Regex Expression to match email! -->
@@ -89,7 +85,35 @@
 				$scope.password = "";
 			}
 			$scope.register= function() {
-				var Users = Parse.Object.extend("Users");
+				var _User = Parse.Object.extend("Users");
+
+				var _user = new _User();
+
+
+				// put info into a database, but however before we input data
+				// we need to look for info from parse.
+
+				_user.set("username", $scope.username);
+				_user.set("password", $scope.password);
+				_user.set("name", $scope.name);
+				_user.set("email", $scope.email);
+				_user.set("isVerified", false);
+
+				//campaignids
+				_user.set("campaignIds", "");
+				//communityIds
+				_user.set("communityIds", "")
+				//followedShelterIds
+				_user.set("shelterIds", "");
+
+				_user.save(null, {
+					success: function(user) {
+						alert("User created");
+					},
+					error: function(user, error) {
+						alert("Shelter was not created");
+					}
+				});
 			}
 		});  
 		</script>
