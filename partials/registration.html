@@ -86,36 +86,50 @@
 			}
 			$scope.register= function() {
 				var _User = Parse.Object.extend("Users");
+				var query = new Parse.Query(_User);
 
 				var _user = new _User();
 
 
 				// put info into a database, but however before we input data
 				// we need to look for info from parse.
+				query.equalTo("username", $scope.username);
+				query.find({
+					success: function(results) {
+						if(results.length === 0) 
+						{
+							_user.set("username", $scope.username);
+							_user.set("password", $scope.password);
+							_user.set("name", $scope.name);
+							_user.set("email", $scope.email);
+							_user.set("isVerified", false);
 
-				_user.set("username", $scope.username);
-				_user.set("password", $scope.password);
-				_user.set("name", $scope.name);
-				_user.set("email", $scope.email);
-				_user.set("isVerified", false);
+							//campaignids
+							_user.set("campaignIds", "");
+							//communityIds
+							_user.set("communityIds", "")
+							//followedShelterIds
+							_user.set("shelterIds", "");
 
-				//campaignids
-				_user.set("campaignIds", "");
-				//communityIds
-				_user.set("communityIds", "")
-				//followedShelterIds
-				_user.set("shelterIds", "");
-
-				_user.save(null, {
-					success: function(user) {
-						alert("User created");
+							_user.save(null, {
+								success: function(user) {
+									alert("User created");
+								},
+								error: function(user, error) {
+									alert("User was not created");
+								}
+							});
+						}
+						else{
+							//user already exists
+							alert("Execute nothing throw error");
+						}
 					},
-					error: function(user, error) {
-						alert("Shelter was not created");
-					}
-				});
-			}
-		});  
+					error: function(error) {
+						}
+					});
+				}
+			});  
 		</script>
 	</body>
 </html>
