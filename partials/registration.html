@@ -13,8 +13,8 @@
 	   			position:absolute;
 	   			font-size: 50px;
 	   			color: red;
-	   			top:33%;
-	   			left:35%;
+	   			top:31%;
+	   			left:30%;
 	   		}
 	   	</style>
 	</head>
@@ -94,10 +94,6 @@
 		var registerApp = angular.module("regApp", []);
 
 		registerApp.controller('regController', function($scope) {
-			$scope.reset = function() {
-				$scope.username = "";
-				$scope.password = "";
-			}
 			$scope.register= function() {
 				var _User = Parse.Object.extend("Users");
 				var query = new Parse.Query(_User);
