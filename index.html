@@ -16,7 +16,9 @@
   <body>
     <nav>
       <ul>
-        <li></li>
+        <li ng-class="{active: $state.includes('campaigns')}">
+          <a ui-sref="campaigns">Campaigns</a>
+        </li>
       </ul>
     </nav>
     <header>

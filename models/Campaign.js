@@ -5,11 +5,11 @@ const Campaign = class Campaign {
     // Start by extending the Parse object this class is associated with and assigning it to the class with the `this` operator
     // Naming convention should be be _ClassName.
     this._Campaign = new (Parse.Object.extend("Campaign"))();
-    for(let k in defaults) {
+    for(const k in defaults) {
       //Loop over default values and set them;
       if(defaults.hasOwnProperty(k)) {
-          var [key, value] = [k, defaults[k]];
-          this._Campaign.set(key, value);
+        const [key, value] = [k, defaults[k]];
+        this._Campaign.set(key, value);
       }
     }
   }
@@ -48,15 +48,16 @@ const Campaign = class Campaign {
   }
   get Description() {
     // String
-    this._Campaign.get("Description");
+    return this._Campaign.get("Description");
   }
   get Verified() {
     // Boolean
     return this._Campaign.get("Verified");
   }
+
   // Each object needs a way to be saved. Some
   save() {
     // Returning this let's us use it as a promise
-    return this._Campaign.save()
+    return this._Campaign.save();
   }
-}
+};
