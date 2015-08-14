@@ -20,7 +20,7 @@ function logError (err) {
 }
 
 gulp.task('js:build', function() {
-  return gulp.src(['dev/**/*.js', 'models/**/*.js', 'controllers/**/*.js'])
+  return gulp.src(['dev/**/*.js', 'controllers/services/**/*.js', 'models/**/*.js', 'controllers/*.js'])
   .pipe(plumber({ errorHandler: logError }))
   .pipe(babel())
   .pipe(concat('app.js'))
