@@ -1,8 +1,8 @@
 <div ng-controller="regController">
-	<div id="afs_header">A Fresh Start Registration!</div>
-		<div id="test">
+	<div>A Fresh Start Registration!</div>
+		<div>
 			<form name="regForm" novalidate>
-			<table class="test" border="0">
+			<table border="0">
 				<tr><td>Username</td><td><input name="username" type="text" ng-model="username" ng-pattern="/([a-zA-Z0-9]){5,15}$/"  required />
 					<span style="color:red" ng-show="regForm.username.$dirty && regForm.username.$invalid">
 						<span ng-show="regForm.username.$error.pattern">Invalid</span>
@@ -12,7 +12,8 @@
 					<span style="color:red" ng-show="regForm.password.$dirty && regForm.password.$invalid">
 						<span ng-show="regForm.password.$error.pattern">Invalid Password</span>
 					</span>
-					</td></tr>
+				</td></tr>
+				<tr><td>Confirm password</td><td><input type="password" ng-model="passwordOne" name="passwordOne" maxlength="16" required /></td></tr>
 				<tr><td>Name</td><td><input type="text" ng-model="name" name="name" ng-pattern="/([a-zA-Z ]){6,32}$/" required /> 
 						<span style="color:red" ng-show="regForm.name.$dirty && regForm.name.$invalid">
 							<span ng-show="regForm.name.$error.pattern">Names can only contain letters</span>
