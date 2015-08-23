@@ -1,6 +1,6 @@
 var path = require('path');
 var gulp = require('gulp');
-var gutil = require('gulp-util');
+var util = require('gulp-util');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var less = require('gulp-less');
@@ -9,9 +9,6 @@ var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 
 function logError (err) {
-  // Inspect the err object
-  //console.log(err);
-
   // Easy err reporting
   console.log(err.toString());
 
@@ -24,7 +21,7 @@ gulp.task('js:build', function() {
   .pipe(plumber({ errorHandler: logError }))
   .pipe(babel())
   .pipe(concat('app.js'))
-  .pipe(uglify())
+  .pipe(!!util.env.production ? uglify() : util.noop())
   .pipe(gulp.dest('static/js'))
   .on('error', logError)
 });
