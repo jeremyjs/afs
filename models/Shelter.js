@@ -1,4 +1,3 @@
-var extend = require('lodash/object/assign');
 
 const Shelter = class Shelter {
 
@@ -60,7 +59,7 @@ const Shelter = class Shelter {
     if(typeof val !== 'object') {
       throw new IncorrectValueTypeException('Expected Object, got', typeof val);
     }
-    val = extend({}, {
+    val = _.extend({}, {
       line1:   val.line1,
       line2:   val.line2,
       city:    val.city,
