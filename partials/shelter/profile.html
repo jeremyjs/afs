@@ -1,7 +1,13 @@
 <div class="shelter profile">
   <img src="" alt="">
-  <h1 class="title"> Shelter Name </h1>
-  <p class="bio"> Shelter Bio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consequuntur?</p>
+  <h1 class="title"> {{vm.shelter.name}} </h1>
+  <p class="description"> {{vm.shelter.description}} </p>
+  <p class="phone"> {{vm.shelter.phone}} </p>
+  <div class="address">
+    <p>{{vm.shelter.address.line1}}</p>
+    <p>{{vm.shelter.address.line2}}</p>
+    <p>{{vm.shelter.address.city}}, {{vm.shelter.address.state}} {{vm.shelter.address.zipcode}}</p>
+  </div>
   <button class="follow"> Follow </button>
   <div class="current-campaign-banner"></div>
   <div class="partners"></div>
