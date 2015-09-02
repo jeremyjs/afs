@@ -7,7 +7,11 @@
     </thead> -->
     <tbody>
       <tr ng-repeat="shelter in vm.shelters">
-        <td><a sref="shelter/{{id}}"><h3>{{shelter._Shelter.attributes.attributes.Name}}</h3></a></td>
+        <td>
+          <a sref="shelters/{{shelter._Shelter.id}}">
+            <h3>{{shelter._Shelter.attributes.attributes.Name}}</h3>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>
