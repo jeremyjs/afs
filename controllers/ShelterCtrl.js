@@ -1,14 +1,15 @@
 angular
 .module('afs')
-.controller('ShelterCtrl', ['ShelterService', ShelterCtrl]);
+.controller('ShelterCtrl', ['ShelterService', '$stateParams', ShelterCtrl]);
 
-function ShelterCtrl(ShelterService) {
+function ShelterCtrl(ShelterService, $stateParams) {
   // Set up vm to be the controller object. This lets us avoid scope when used with 'Controller As' syntax
   let vm = this;
-  ShelterService.findShelters().then((data) =>
-    console.log(data)
-  );
-  ShelterService.getShelter().then((data) =>
-    console.log(data)
-  );
+  vm.test = "test";
+  ShelterService.findShelters().then((data) => {
+    vm.shelters = data.map((s) => { return new Shelter(s); });
+  });
+  ShelterService.getShelter($stateParams.id).then((data) => {
+    vm.shelter = new Shelter(data);
+  });
 }

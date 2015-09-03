@@ -1,5 +1,18 @@
-<div class="shelter-listing">
-  <div ng-repeat="shelter in shelters">
-    <a sref="shelter/{{id}}">{{name}}</a>
-  </div>
+<div class="shelter list">
+  <table>
+    <!-- <thead>
+      <tr>
+        <th data-field="name">Shelter</th>
+      </tr>
+    </thead> -->
+    <tbody>
+      <tr ng-repeat="shelter in vm.shelters">
+        <td>
+          <a sref="shelters/{{shelter._Shelter.id}}">
+            <h3>{{shelter._Shelter.attributes.attributes.Name}}</h3>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
