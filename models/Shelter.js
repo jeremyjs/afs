@@ -8,7 +8,9 @@ const Shelter = class Shelter {
     // Start by extending the Parse object this class is associated with and assigning it to the class with the `this` operator
     // Naming convention should be be _ClassName.
     if(typeof defaults.isValid === 'function' && defaults.isValid()) {
+      const id = defaults.id;
       defaults = defaults.attributes;
+      defaults.id = id;
     }
 
     this._Shelter = new (Parse.Object.extend('Shelter'))();
@@ -98,7 +100,7 @@ const Shelter = class Shelter {
    * Getters *
    ***********/
 
-  get id ()          { return this._Shelter.get('id');          }
+  get id ()          { return this._Shelter.id;                 }
   get name ()        { return this._Shelter.get('name');        }
   get email ()       { return this._Shelter.get('email');       }
   get phone ()       { return this._Shelter.get('phone');       }

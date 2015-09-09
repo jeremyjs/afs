@@ -25,5 +25,5 @@ angular
       templateUrl: 'partials/shelter/profile.html',
       controller: 'ShelterCtrl',
       controllerAs: 'vm'
-    })
+    });
 }]);

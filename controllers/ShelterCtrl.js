@@ -11,8 +11,14 @@ function ShelterCtrl(ShelterService, $stateParams) {
   vm.test = "test";
   ShelterService.findShelters().then((data) => {
     vm.shelters = data.map((s) => { return new Shelter(s); });
+    if(vm.shelters) {
+      console.log('vm.shelters: ', vm.shelters);
+      console.log('vm.shelters[0].id: ', vm.shelters[0].id);
+      console.log('vm.shelters[0].name: ', vm.shelters[0].name);
+    }
   });
   ShelterService.getShelter($stateParams.id).then((data) => {
     vm.shelter = new Shelter(data);
+    console.log('vm.shelter: ', vm.shelter);
   });
 }
