@@ -1,3 +1,4 @@
+/* global require __dirname */
 var path = require('path');
 var gulp = require('gulp');
 var util = require('gulp-util');
@@ -16,14 +17,14 @@ function logError (err) {
   this.emit('end');
 }
 
-gulp.task('js:build', function() {
+gulp.task('js:build', function () {
   return gulp.src(['dev/**/*.js', 'controllers/services/**/*.js', 'models/**/*.js', 'controllers/*.js'])
   .pipe(plumber({ errorHandler: logError }))
   .pipe(babel())
   .pipe(concat('app.js'))
-  .pipe(!!util.env.production ? uglify() : util.noop())
+  .pipe(util.env.production ? uglify() : util.noop())
   .pipe(gulp.dest('static/js'))
-  .on('error', logError)
+  .on('error', logError);
 });
 
 gulp.task('less:build', function () {
@@ -33,7 +34,7 @@ gulp.task('less:build', function () {
     paths: [ path.join(__dirname, 'dev', 'less', 'includes') ]
   }))
   .pipe(gulp.dest('static/css'))
-  .on('error', logError)
+  .on('error', logError);
 });
 
 gulp.task('default', ['less:build', 'js:build']);
