@@ -108,6 +108,7 @@ const Shelter = class Shelter {
   get location ()    { return this._Shelter.get('location');    }
   get description () { return this._Shelter.get('description'); }
   get verified ()    { return this._Shelter.get('verified');    }
+  get avatarImg ()   { return this._Shelter.get('avatarImg');   }
   get createdAt ()   { return this._Shelter.get('createdAt');   }
   get updatedAt ()   { return this._Shelter.get('updatedAt');   }
 

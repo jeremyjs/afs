@@ -1,5 +1,9 @@
 <div class="shelter profile">
-  <img src="" alt="">
+  <div class="profile-avatar-outer">
+    <div class="profile-avatar-inner">
+      <img class="profile-avatar" src="{{vm.shelter.avatarImg.url()}}" alt="">
+    </div>
+  </div>
   <h1 class="title"> {{vm.shelter.name}} </h1>
   <p class="description"> {{vm.shelter.description}} </p>
   <p class="phone"> {{vm.shelter.phone}} </p>
