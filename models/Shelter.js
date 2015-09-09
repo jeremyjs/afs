@@ -1,4 +1,6 @@
 
+const _ = _;
+
 const Shelter = class Shelter {
 
   //create a constructor that accepts defaults, an object with `key: value` pairs that correspond to Parse columns
@@ -10,9 +12,9 @@ const Shelter = class Shelter {
     }
 
     this._Shelter = new (Parse.Object.extend('Shelter'))();
-    for(let k in defaults) {
+    for(const k in defaults) {
       if(defaults.hasOwnProperty(k)) {
-        var [key, value] = [k, defaults[k]];
+        const [key, value] = [k, defaults[k]];
         this._Shelter.set(key, value);
       }
     }
@@ -20,7 +22,7 @@ const Shelter = class Shelter {
 
   save () {
     // Returning this let's us use it as a promise
-    return this._Shelter.save()
+    return this._Shelter.save();
   }
 
   // Schema
@@ -68,7 +70,7 @@ const Shelter = class Shelter {
       line2:   val.line2,
       city:    val.city,
       state:   val.state,
-      zipcode: val.zipcode,
+      zipcode: val.zipcode
     });
     return this._Shelter.set('address', val);
   }
@@ -96,7 +98,7 @@ const Shelter = class Shelter {
    * Getters *
    ***********/
 
-  get id ()          { return this._Shelter.get('id')           }
+  get id ()          { return this._Shelter.get('id');          }
   get name ()        { return this._Shelter.get('name');        }
   get email ()       { return this._Shelter.get('email');       }
   get phone ()       { return this._Shelter.get('phone');       }
@@ -107,4 +109,4 @@ const Shelter = class Shelter {
   get createdAt ()   { return this._Shelter.get('createdAt');   }
   get updatedAt ()   { return this._Shelter.get('updatedAt');   }
 
-}
+};

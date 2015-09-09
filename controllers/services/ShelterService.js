@@ -10,6 +10,6 @@ angular
 
   return {
     findShelters: findShelters,
-    getShelter:   getShelter,
+    getShelter:   getShelter
   };
-}])
+}]);
