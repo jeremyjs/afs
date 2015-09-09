@@ -13,7 +13,11 @@
     <p>{{vm.shelter.address.city}}, {{vm.shelter.address.state}} {{vm.shelter.address.zipcode}}</p>
   </div>
   <button class="follow"> Follow </button>
-  <div class="current-campaign-banner"></div>
+  <div class="current-campaign-banner">
+    <div ui-view="campaign"></div>
+  </div>
   <div class="partners"></div>
-  <div class="announcements feed"></div>
+  <div class="announcements feed">
+    <div ui-view="announcements"></div>
+  </div>
 </div>

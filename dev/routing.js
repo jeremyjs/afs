@@ -22,8 +22,22 @@ angular
     })
     .state('shelter', {
       url: '/shelters/:id',
-      templateUrl: 'partials/shelter/profile.html',
-      controller: 'ShelterCtrl',
-      controllerAs: 'vm'
+      views: {
+        '': {
+          templateUrl: 'partials/shelter/profile.html',
+          controller: 'ShelterCtrl',
+          controllerAs: 'vm'
+        },
+        'campaign': {
+          templateUrl: 'partials/campaign/show.html',
+          controller: 'ShelterCtrl',
+          controllerAs: 'vm'
+        },
+        'announcements': {
+          templateUrl: 'partials/announcements/show.html',
+          controller: 'ShelterCtrl',
+          controllerAs: 'vm'
+        }
+      }
     });
 }]);
