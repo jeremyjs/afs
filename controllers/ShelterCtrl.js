@@ -10,7 +10,6 @@ angular
 function ShelterCtrl(ShelterService, CampaignService, AnnouncementsService, $stateParams) {
   // Set up vm to be the controller object. This lets us avoid scope when used with 'Controller As' syntax
   const vm = this;
-  vm.test = "test";
   ShelterService.findShelters().then((data) => {
     vm.shelters = data.map((s) => { return new Shelter(s); });
     if(vm.shelters) {
