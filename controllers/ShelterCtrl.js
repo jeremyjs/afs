@@ -5,7 +5,7 @@ const Announcements = Announcements;
 
 angular
 .module('afs')
-.controller('ShelterCtrl', ['ShelterService', 'CampaignService', 'AnnouncementsService', '$stateParams', ShelterCtrl]);
+.controller('ShelterCtrl', ['ShelterService', 'CampaignService', 'AnnouncementService', '$stateParams', ShelterCtrl]);
 
 function ShelterCtrl(ShelterService, CampaignService, AnnouncementsService, $stateParams) {
   // Set up vm to be the controller object. This lets us avoid scope when used with 'Controller As' syntax
