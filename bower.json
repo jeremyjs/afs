@@ -18,9 +18,10 @@
   "dependencies": {
     "angular": "~1.4.5",
     "angular-ui-router": "~0.2.15",
-    "momentjs": "~2.10.6",
+    "components-font-awesome": "~4.4.0",
+    "lodash": "~3.10.1",
     "material-design-lite": "~1.0.0",
-    "parse-js-sdk": "~1.4.2",
-    "lodash": "~3.10.1"
+    "momentjs": "~2.10.6",
+    "parse-js-sdk": "~1.4.2"
   }
 }
