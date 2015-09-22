@@ -14,16 +14,7 @@
     <title>A Fresh Start</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li ng-class="{active: $state.includes('campaigns')}">
-          <a ui-sref="campaigns">Campaigns</a>
-        </li>
-        <li ng-class="{active: $state.includes('shelters')}">
-          <a ui-sref="shelters">Shelters</a>
-        </li>
-      </ul>
-    </nav>
+    <ng-include src="'/partials/layout/navbar.html'"></ng-include>
     <header>
 
     </header>
