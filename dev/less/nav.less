@@ -4,10 +4,33 @@ nav {
   margin:0;
   padding:0;
   height:@nav_height;
-  display: block;
-  background: @brand;
-  border-bottom: 3px solid @darker_brand;
-  ul {
+  display:flex;
+  justify-content:space-between;
+  background:@brand;
+  border-bottom:3px solid @darker_brand;
+  ul.navbar__links {
+    margin:0;
+    padding:0 2%;
+    height:50px;
+    display:flex;
+    align-items:center;
+    li {
+      display:inline-block;
+      height:@nav_height;
+      padding:0 12px;
+      &.active {
+        border-bottom:3px solid @lighter_brand;
+        background:@lighter_brand;
+      }
+      a {
+        display:block;
+        color:#fff;
+        margin:12px 0;
+        text-decoration:none;
+      }
+    }
+  }
+  ul.navbar__actions {
     margin:0;
     padding:0 2%;
     height:50px;
@@ -15,16 +38,8 @@ nav {
       display:inline-block;
       height:@nav_height;
       margin:0;
-      padding:1% 2%;
-      &.active {
-        border-bottom:3px solid @lighter_brand;
-        background: @lighter_brand;
-      }
-      a {
-        display:block;
-        color:#fff;
-        height:100%;
-        text-decoration: none;
+      button {
+        margin:12px 0;
       }
     }
   }

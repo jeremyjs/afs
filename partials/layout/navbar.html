@@ -1,10 +1,20 @@
-<nav>
-  <ul>
+<nav class="navbar">
+  <ul class="navbar__links">
     <li ng-class="{active: $state.includes('campaigns')}">
       <a ui-sref="campaigns">Campaigns</a>
     </li>
     <li ng-class="{active: $state.includes('shelters')}">
       <a ui-sref="shelters">Shelters</a>
+    </li>
+  </ul>
+  <ul class="navbar__actions">
+    <li class="navbar__actions__action--login">
+      <a ui-sref="/login" class="navbar__actions__action--login-link">
+        <button class="navbar__actions__action--login-link-button">
+          <i class="fa fa-sign-in"></i>
+          Login
+        </button>
+      </a>
     </li>
   </ul>
 </nav>
